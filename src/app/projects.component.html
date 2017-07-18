@@ -1,0 +1,23 @@
+<html>
+<head>
+  <!--<link rel="stylesheet" type="text/css" href="app.style.css">-->
+  <style>
+    .items{
+      color: blue;
+      width:30em;
+      font-family:arial, verdana, sans-serif; /* ADDED */
+      font-size:1.2em; /* ADDED */
+      text-align:left;
+      margin-left: 4%;
+    }
+  </style>
+</head>
+<body>
+  <ul class="items">
+    <li *ngFor="let p of projects">
+      <span>PID - {{p.pid}}</span><br>
+      <span>Title - {{p.title}}</span><br>
+    </li>
+  </ul>
+</body>
+</html>

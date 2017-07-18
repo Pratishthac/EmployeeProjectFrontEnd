@@ -1,0 +1,48 @@
+<html>
+<head>
+  <style>
+    h1 {
+      color: darkblue;
+      font-size: 3em;
+    }
+
+    header {
+      font-size: 1em;
+    }
+    .items{
+      color: blue;
+      width:45em;
+      font-family:arial, verdana, sans-serif; /* ADDED */
+      font-size:1.2em; /* ADDED */
+      text-align:left;
+      margin-left: 4%;
+    }
+  </style>
+</head>
+<body>
+<div style="text-align:center" id="div1">
+  <h1>
+    Employee Details
+  </h1>
+  <div>
+    <header></header>
+  </div>
+</div>
+
+<div>
+  <ul class="items">
+    <li *ngFor="let e of employees">
+      <span (click)="showProjects($event, e.eid)">
+        <b><u>{{e.name}}</u></b>
+      </span><br>
+      &bull;&nbsp;<span>{{e.email}}</span><br>
+      &bull;&nbsp;<span>{{e.city}}</span><br><br>
+    </li>
+  </ul>
+</div>
+<div>
+<projects *ngIf="eid" [eid]= "eid"></projects>
+</div>
+</body>
+</html>
+
